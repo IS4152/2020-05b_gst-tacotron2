@@ -22,7 +22,8 @@ import numpy as np
 
 # FILENAMEPREFIX = 'i_am_a_screw_up_and_forgot_to_set_this' # DO NOT COMMIT THIS UNCOMMENTED
 # FILENAMEPREFIX = 'emovdb'
-FILENAMEPREFIX = 'emovdbwithspeaker'
+# FILENAMEPREFIX = 'emovdbwithspeaker'
+FILENAMEPREFIX = 'emovdbwithonespeakeroneemo'
 # FILENAMEPREFIX = 'emovdbbutoneonly'
 # FILENAMEPREFIX = 'emovdbwithljsbutless'
 # FILENAMEPREFIX = 'emovdbwithoutamused'
@@ -30,7 +31,6 @@ FILENAMEPREFIX = 'emovdbwithspeaker'
 # FILENAMEPREFIX = 'iemocap'
 
 INCLUDE_EMOVDB = True
-INCLUDE_LJS = False
 INCLUDE_MELD = False
 INCLUDE_IEMOCAP = False
 
@@ -39,7 +39,6 @@ INCLUDE_IEMOCAP = False
 SPLITS = [(0.98, "train"), (0.02, "val")]
 
 EMOVDB_CMUARCTIC_PATH = '/home/e/e-liang/is4152/tacotron2/cmuarctic.data' # Transcripts for emovdb dataset located in repo root
-LJS_FOLDER = '/temp/e-liang/LJSpeech-1.1'
 MELD_FOLDER = '/temp/e-liang/MELD.Raw'
 IEMOCAP_FOLDER = '/temp/e-liang/IEMOCAP_full_release'
 OUT_FOLDER = '../filelists/' # Folder located in repo root
@@ -61,27 +60,21 @@ def get_emovdb_lines():
 
     p = re.compile('.*_0(\d{3}).wav')
     all_emovdb_lines = []
-    speakers = [os.path.basename(f) for f in glob.glob('/temp/e-liang/out/*')]
-    for speaker_idx, speaker in enumerate(speakers):
-        files = sorted(glob.glob(f"/temp/e-liang/out/{speaker}/*/*"))
+
+    # Regular speaker IDs
+    # speakers = [os.path.basename(f) for f in glob.glob('/temp/e-liang/out/*')]
+    # for speaker_idx, speaker in enumerate(speakers):
+    #     files = sorted(glob.glob(f"/temp/e-liang/out/{speaker}/*/*"))
+    #     all_emovdb_lines.extend([f"{os.path.abspath(file)}|{dataLookup[p.match(file).group(1)]}|{speaker_idx}\n" for file in files if p.match(file) is not None])
+
+    # Select only 1 speaker for each of the emotions here.
+    # Follows emo-tts:
+    # Jenie anger, Jenie disgust (emo-tts uses Bea disgust, but Bea has no disgust emotion), Bea sleepiness, and Bea amused
+    for speaker_idx, speaker in enumerate(['/jenie/aud_anger/', '/jenie/aud_disgust/', '/bea/amused/', '/bea/sleepiness/']):
+        files = sorted(glob.glob(f"/temp/e-liang/out{speaker}*"))
         all_emovdb_lines.extend([f"{os.path.abspath(file)}|{dataLookup[p.match(file).group(1)]}|{speaker_idx}\n" for file in files if p.match(file) is not None])
 
-    # if SHOULD_REMOVE_AMUSED:
-    #     all_emovdb_lines = [line for line in all_emovdb_lines if '/amused/' not in line and '/aud_am/' not in line]
-    # all_emovdb_lines = [line for line in all_emovdb_lines if '/sam/' in line]
-
     return all_emovdb_lines
-
-def get_ljs_lines():
-    metadata_lines = None
-    with open(os.path.join(LJS_FOLDER, 'metadata.csv'), 'r') as f:
-        metadata_lines = f.readlines()
-
-    def metadata_line_to_dataset_line(line):
-        [lj_id, _, normalized_transcript] = line.split('|') # From LJS README, each line contains ID, Transcription, Normalized Transcript
-        filepath = os.path.join(LJS_FOLDER, "wavs", f"{lj_id}.wav")
-        return f"{filepath}|{normalized_transcript}"
-    return list(map(metadata_line_to_dataset_line, metadata_lines))
 
 def get_meld_lines():
     # Only use train split
@@ -116,8 +109,6 @@ def get_iemocap_lines():
 dataset_lines = []
 if INCLUDE_EMOVDB:
     dataset_lines = get_emovdb_lines() + dataset_lines
-if INCLUDE_LJS:
-    dataset_lines = get_ljs_lines() + dataset_lines
 if INCLUDE_MELD:
     dataset_lines = get_meld_lines() + dataset_lines
 if INCLUDE_IEMOCAP:

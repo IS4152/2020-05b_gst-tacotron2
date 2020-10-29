@@ -178,6 +178,8 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
     """
     if hparams.distributed_run:
         init_distributed(hparams, n_gpus, rank, group_name)
+    else:
+        torch.cuda.set_device('cuda:1')
 
     torch.manual_seed(hparams.seed)
     torch.cuda.manual_seed(hparams.seed)
