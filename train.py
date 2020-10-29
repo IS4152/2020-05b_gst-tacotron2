@@ -1,8 +1,9 @@
+from layers import TacotronSTFT
 import os
 import time
 import argparse
 import math
-from numpy import finfo
+from numpy import finfo, array
 
 import torch
 from distributed import apply_gradient_allreduce
@@ -10,11 +11,17 @@ import torch.distributed as dist
 from torch.utils.data.distributed import DistributedSampler
 from torch.utils.data import DataLoader
 
-from model import load_model
+from model import Tacotron2, load_model
 from data_utils import TextMelLoader, TextMelCollate
 from loss_function import Tacotron2Loss
 from logger import Tacotron2Logger
 from hparams import create_hparams
+from text import cmudict, text_to_sequence
+import librosa
+
+
+import sys
+sys.path.append('waveglow/')
 
 
 def reduce_tensor(tensor, n_gpus):
@@ -107,6 +114,26 @@ def save_checkpoint(model, optimizer, learning_rate, iteration, filepath):
                 'optimizer': optimizer.state_dict(),
                 'learning_rate': learning_rate}, filepath)
 
+def log_audio(model: Tacotron2, iteration: int, logger: Tacotron2Logger, waveglow, inference_batch, text_encoded, mel, pitch_contour):
+    # load source data to obtain rhythm using tacotron 2 as a forced aligner
+    x, y = model.parse_batch(inference_batch)
+
+    with torch.no_grad():
+        # get rhythm (alignment map) using tacotron 2
+        mel_outputs, mel_outputs_postnet, gate_outputs, rhythm = model.forward(x)
+        rhythm = rhythm.permute(1, 0, 2)
+
+    for speaker in range(4):
+        speaker_id = torch.LongTensor([speaker]).cuda()
+
+        with torch.no_grad():
+            mel_outputs, mel_outputs_postnet, gate_outputs, _ = model.inference_noattention(
+                (text_encoded, mel, speaker_id, pitch_contour, rhythm))
+
+        with torch.no_grad():
+            audio = waveglow.infer(mel_outputs_postnet, sigma=0.8)
+
+        logger.add_audio(f"Speaker {str(speaker)}", audio[0].data.cpu(), global_step=iteration, sample_rate=hparams.sampling_rate)
 
 def validate(model, criterion, valset, iteration, batch_size, n_gpus,
              collate_fn, logger, distributed_run, rank):
@@ -169,6 +196,41 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
         model = apply_gradient_allreduce(model)
 
     criterion = Tacotron2Loss()
+
+    waveglow_path = 'waveglow_256channels_universal_v5.pt'
+    waveglow = torch.load(waveglow_path)['model']
+    waveglow.cuda().eval().float()
+    # waveglow.cuda().eval().half()
+    for k in waveglow.convinv:
+        k.float()
+    arpabet_dict = cmudict.CMUDict('data/cmu_dictionary')
+    audio_paths = 'data/examples_filelist.txt'
+    dataloader = TextMelLoader(audio_paths, hparams)
+    datacollate = TextMelCollate(1)
+    file_idx = 0
+    audio_path, text, sid = dataloader.audiopaths_and_text[file_idx]
+
+    stft = TacotronSTFT(hparams.filter_length, hparams.hop_length, hparams.win_length,
+                        hparams.n_mel_channels, hparams.sampling_rate, hparams.mel_fmin,
+                        hparams.mel_fmax)
+    def load_mel(path):
+        audio, sampling_rate = librosa.core.load(path, sr=hparams.sampling_rate)
+        audio = torch.from_numpy(audio)
+        if sampling_rate != hparams.sampling_rate:
+            raise ValueError("{} SR doesn't match target {} SR".format(
+                sampling_rate, stft.sampling_rate))
+        audio_norm = audio.unsqueeze(0)
+        audio_norm = torch.autograd.Variable(audio_norm, requires_grad=False)
+        melspec = stft.mel_spectrogram(audio_norm)
+        melspec = melspec.cuda()
+        return melspec
+
+    # get audio path, encoded text, pitch contour and mel for gst
+    text_encoded = torch.LongTensor(text_to_sequence(text, hparams.text_cleaners, arpabet_dict))[None, :].cuda()    
+    pitch_contour = dataloader[file_idx][3][None].cuda()
+    mel = load_mel(audio_path)
+    print(audio_path, text)
+    inference_batch = datacollate([dataloader[file_idx]])
 
     logger = prepare_directories_and_logger(
         output_directory, log_directory, rank)
@@ -247,6 +309,9 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
                         output_directory, "checkpoint_{}".format(iteration))
                     save_checkpoint(model, optimizer, learning_rate, iteration,
                                     checkpoint_path)
+
+                    # if not is_overflow and (iteration % 2 == 0):
+                    log_audio(model, iteration, logger, waveglow, inference_batch, text_encoded, mel, pitch_contour)
 
             iteration += 1
 

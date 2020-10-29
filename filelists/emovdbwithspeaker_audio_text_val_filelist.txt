@@ -1,0 +1,131 @@
+/temp/e-liang/out/bea/neutral/neutral_253-280_0277.wav|McCoy found a stifling, poisonous atmosphere in the pent cabin.|0
+/temp/e-liang/out/jenie/aud_neutral/neutral_365-392_0369.wav|In partnership with Daylight, the pair raided the San Jose Interurban.|1
+/temp/e-liang/out/sam/aud_disgust/Disgust_169_196_0182.wav|This time he did not yap for mercy.|3
+/temp/e-liang/out/sam/aud_am/amused_336-364_0344.wav|He seemed to fill it with his tremendous vitality.|3
+/temp/e-liang/out/jenie/aud_neutral/neutral_365-392_0376.wav|Your price, my son, is just about thirty per week.|1
+/temp/e-liang/out/jenie/aud_anger/anger_477-504_0477.wav|Wada, Louis, and the steward are servants of Asiatic breed.|1
+/temp/e-liang/out/josh/aud_am/amused_57-73_0072.wav|But who was Eileen's double.|2
+/temp/e-liang/out/jenie/aud_anger/anger_477-504_0494.wav|O'Brien took off his coat and bared his right arm.|1
+/temp/e-liang/out/bea/anger/anger_113-140_0124.wav|It was Jeanne singing softly over beyond the rocks.|0
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_197-224_0209.wav|It was not a large lake, and almost round.|1
+/temp/e-liang/out/sam/aud_anger/anger_477-504_0486.wav|For the rest, he was a mere automaton.|3
+/temp/e-liang/out/bea/anger/anger_253-280_0258.wav|Soaked in seawater they offset the heat rays.|0
+/temp/e-liang/out/jenie/aud_am/amused_57-84_0071.wav|What was the object of your little sensation.|1
+/temp/e-liang/out/sam/aud_sleep/sleepiness_393-420_0405.wav|It seemed the ordained order of things that dogs should work.|3
+/temp/e-liang/out/bea/sleepiness/sleepiness_113-140_0120.wav|My right foot feels like that of a Chinese debutante.|0
+/temp/e-liang/out/sam/aud_disgust/disgust_309-336_0335.wav|Red-Eye swung back and forth on the branch farther down.|3
+/temp/e-liang/out/josh/aud_sleep/sleepiness_197-224_0213.wav|Between him and the beach was the cane-grass fence of the compound.|2
+/temp/e-liang/out/sam/aud_anger/anger_141-168_0144.wav|But there was something even more startling than this resemblance.|3
+/temp/e-liang/out/josh/aud_am/amused_141_168_0154.wav|He was smooth-shaven, and his hair and eyes were black.|2
+/temp/e-liang/out/sam/aud_neut/neutral_225_252_0226.wav|That came before my A B C's.|3
+/temp/e-liang/out/josh/aud_sleep/sleepiness_253_280_0279.wav|She said with chattering teeth.|2
+/temp/e-liang/out/sam/aud_sleep/sleepiness_449-476_0473.wav|The night was calm and snowy.|3
+/temp/e-liang/out/jenie/aud_disgust/disgust_253-280_0274.wav|And Raoul listened again to the tale of the house.|1
+/temp/e-liang/out/bea/neutral/neutral_337-364_0346.wav|Get down and dig in.|0
+/temp/e-liang/out/bea/anger/anger_225-252_0245.wav|Out of his eighteen hundred, he laid aside sixteen hundred each year.|0
+/temp/e-liang/out/josh/aud_neut/neutral_225-252_0227.wav|It was the same way with our revolvers and rifles.|2
+/temp/e-liang/out/sam/aud_disgust/disgust_281-308_0300.wav|From my earliest recollection my sleep was a period of terror.|3
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_29-56_0044.wav|Her own betrayal of herself was like tonic to Philip.|1
+/temp/e-liang/out/sam/aud_disgust/Disgust_169_196_0179.wav|Tomorrow I'm going after that bear, he said.|3
+/temp/e-liang/out/sam/aud_anger/anger_477-504_0502.wav|Anything unusual or abnormal was sufficient to send a fellow to Molokai.|3
+/temp/e-liang/out/jenie/aud_am/amused_57-84_0069.wav|It was his intention to return to Eileen and her father.|1
+/temp/e-liang/out/josh/aud_neut/neutral_281-308_0300.wav|From my earliest recollection my sleep was a period of terror.|2
+/temp/e-liang/out/sam/aud_sleep/sleepiness_336-364_0353.wav|Here the explosion of mirth drowned him out.|3
+/temp/e-liang/out/sam/aud_disgust/Disgust_197-224_0209.wav|It was not a large lake, and almost round.|3
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_449-476_0463.wav|They are his tongue, by which he makes his knowledge articulate.|1
+/temp/e-liang/out/sam/aud_sleep/sleepiness_225-252_0244.wav|He was the soul of devotion to his employers.|3
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_337-360_0354.wav|Fresh meat they failed to obtain.|1
+/temp/e-liang/out/josh/aud_neut/neutral_1-28_0020.wav|Clubs and balls and cities grew to be only memories.|2
+/temp/e-liang/out/sam/aud_sleep/sleepiness_225-252_0239.wav|He cried in such genuine dismay that she broke into hearty laughter.|3
+/temp/e-liang/out/jenie/aud_anger/anger_29-56_0037.wav|I was the only one who remained sitting.|1
+/temp/e-liang/out/sam/aud_disgust/Disgust_225-252_0247.wav|They ought to pass here some time today.|3
+/temp/e-liang/out/sam/aud_disgust/Disgust_1-28_0018.wav|There was a change now.|3
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_477-504_0482.wav|And their chief virtue lies in that they will never wear out.|1
+/temp/e-liang/out/sam/aud_disgust/disgust_367-392_0368.wav|I just do appreciate it without being able to express my feelings.|3
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_253-280_0267.wav|Eli Harding asked, as Shunk started to follow.|1
+/temp/e-liang/out/sam/aud_am/amused_309-336_0330.wav|Red-Eye never committed a more outrageous deed.|3
+/temp/e-liang/out/sam/aud_sleep/sleepiness_253-280_0273.wav|They are big trees and require plenty of room.|3
+/temp/e-liang/out/bea/sleepiness/sleepiness_337-364_0347.wav|They are greatly delighted with anything that is bright or giveth a sound.|0
+/temp/e-liang/out/sam/aud_disgust/Disgust_29-56_0044.wav|Her own betrayal of herself was like tonic to Philip.|3
+/temp/e-liang/out/bea/sleepiness/sleepiness_337-364_0337.wav|Encouraged by my conduct, Big-Face became a sudden ally.|0
+/temp/e-liang/out/bea/neutral/Neutral_1-28_0003.wav|For the twentieth time that evening the two men shook hands.|0
+/temp/e-liang/out/sam/aud_disgust/Disgust_57-84_0058.wav|I came for information more out of curiosity than anything else.|3
+/temp/e-liang/out/sam/aud_anger/anger_421-448_0440.wav|Yes, sir, I corrected.|3
+/temp/e-liang/out/jenie/aud_disgust/disgust_169-190_0178.wav|Every bone in her aged body seemed broken or dislocated.|1
+/temp/e-liang/out/sam/aud_anger/anger_57-84_0068.wav|In a flash Philip followed its direction.|3
+/temp/e-liang/out/josh/aud_neut/neutral_57-84_0075.wav|There has been a change, she interrupted him.|2
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_141-168_0151.wav|And MacDougall was beyond the trail, with three weeks to spare.|1
+/temp/e-liang/out/bea/sleepiness/sleepiness_1-28_0003.wav|For the twentieth time that evening the two men shook hands.|0
+/temp/e-liang/out/jenie/aud_am/amused_225-252_0225.wav|I was brought up the way most girls in Hawaii are brought up.|1
+/temp/e-liang/out/sam/aud_anger/anger_169-196_0172.wav|Gregson had left the outer door slightly ajar.|3
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_169-196_0171.wav|And when you come back in a few days, bring Eileen.|1
+/temp/e-liang/out/jenie/aud_neutral/neutral_197-364_0236.wav|Don't you see I hate you.|1
+/temp/e-liang/out/jenie/aud_anger/anger_29-56_0034.wav|Men of Selden's stamp don't stop at women and children.|1
+/temp/e-liang/out/sam/aud_anger/anger_169-196_0174.wav|They were the presage of storm.|3
+/temp/e-liang/out/jenie/aud_am/amused_29-56_0036.wav|She turned in at the hotel.|1
+/temp/e-liang/out/sam/aud_am/amused_29-56_0029.wav|Their forces were already moving into the north country.|3
+/temp/e-liang/out/jenie/aud_neutral/neutral_29-56_0046.wav|The girl faced him, her eyes shining with sudden fear.|1
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_169-196_0192.wav|He did not rush in.|1
+/temp/e-liang/out/sam/aud_disgust/disgust_421-448_0424.wav|Obviously, it was a disease that could be contracted by contact.|3
+/temp/e-liang/out/bea/amused/amused_253-280_0260.wav|Nobody knew his history, they of the Junta least of all.|0
+/temp/e-liang/out/sam/aud_sleep/sleepiness_253-280_0262.wav|They wouldn't be sweeping a big vessel like the Martha.|3
+/temp/e-liang/out/bea/amused/amused_113-140_0140.wav|Accept a father's blessing, and with it, this.|0
+/temp/e-liang/out/sam/aud_am/amused_113-140_0129.wav|Her face was against his breast.|3
+/temp/e-liang/out/sam/aud_am/amused_253-280_0280.wav|I'll be out of my head in fifteen minutes.|3
+/temp/e-liang/out/sam/aud_disgust/disgust_281-308_0301.wav|But all my dreams violated this law.|3
+/temp/e-liang/out/bea/neutral/neutral_197-224_0221.wav|I don't know why you're here at all.|0
+/temp/e-liang/out/josh/aud_neut/neutral_1-28_0015.wav|It's the aurora borealis.|2
+/temp/e-liang/out/sam/aud_anger/anger_85-112_0103.wav|But there came no promise from the bow of the canoe.|3
+/temp/e-liang/out/bea/sleepiness/sleepiness_449-476_0464.wav|Between the rush of the cascades, streaks of rust showed everywhere.|0
+/temp/e-liang/out/sam/aud_anger/anger_57-84_0061.wav|Philip snatched at the letter which Gregson held out to him.|3
+/temp/e-liang/out/sam/aud_neut/neutral_113-140_0116.wav|Was it the rendezvous of those who were striving to work his ruin.|3
+/temp/e-liang/out/bea/amused/amused_85-112_0105.wav|Only, it is so wonderful, so almost impossible to believe.|0
+/temp/e-liang/out/bea/sleepiness/sleepiness_365-392_0388.wav|It was my idea to a tee.|0
+/temp/e-liang/out/josh/aud_sleep/sleepiness_29-56_0030.wav|I had faith in them.|2
+/temp/e-liang/out/bea/amused/amused_253-280_0265.wav|The discovery seemed to have been made on the spur of the moment.|0
+/temp/e-liang/out/bea/neutral/neutral_281-308_0303.wav|But they make the mistake of ignoring their own duality.|0
+/temp/e-liang/out/sam/aud_anger/anger_336-364_0361.wav|But he did not broach it, preferring to mature it carefully.|3
+/temp/e-liang/out/sam/aud_anger/anger_197-224_0218.wav|The ringing of the big bell aroused him.|3
+/temp/e-liang/out/jenie/aud_anger/anger_505-532_0509.wav|Yet, in accordance with Ernest's test of truth, it worked.|1
+/temp/e-liang/out/jenie/aud_neutral/neutral_141-168_0163.wav|Philip made no effort to follow.|1
+/temp/e-liang/out/jenie/aud_neutral/neutral_197-364_0342.wav|Seventeen, no, eighteen days ago.|1
+/temp/e-liang/out/josh/aud_sleep/sleepiness_29-56_0038.wav|We'll have to watch our chances.|2
+/temp/e-liang/out/bea/anger/anger_281-308_0307.wav|Very early in my life, I separated from my mother.|0
+/temp/e-liang/out/josh/aud_sleep/sleepiness_169-196_0187.wav|Ahead of them they saw a glimmer of sunshine.|2
+/temp/e-liang/out/sam/aud_am/amused_85-112_0098.wav|Shall I carry you.|3
+/temp/e-liang/out/sam/aud_disgust/disgust_281-308_0303.wav|But they make the mistake of ignoring their own duality.|3
+/temp/e-liang/out/sam/aud_anger/anger_336-364_0342.wav|Seventeen, no, eighteen days ago.|3
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_225-252_0231.wav|The Resident Commissioner is away in Australia.|1
+/temp/e-liang/out/josh/aud_am/amused_113-140_0123.wav|She had died from cold and starvation.|2
+/temp/e-liang/out/sam/aud_sleep/sleepiness_57-84_0079.wav|It was a large canoe.|3
+/temp/e-liang/out/bea/neutral/neutral_141-168_0150.wav|Goodbye, Pierre, he shouted.|0
+/temp/e-liang/out/sam/aud_am/amused_169-196_0177.wav|She had been thoroughly and efficiently mauled.|3
+/temp/e-liang/out/sam/aud_disgust/disgust_309-336_0309.wav|White Leghorns, said Mrs Mortimer.|3
+/temp/e-liang/out/josh/aud_neut/neutral_197-224_0221.wav|I don't know why you're here at all.|2
+/temp/e-liang/out/josh/aud_neut/neutral_57-84_0061.wav|Philip snatched at the letter which Gregson held out to him.|2
+/temp/e-liang/out/bea/sleepiness/sleepiness_477-504_0503.wav|His beady black eyes saw bargains where other men saw bankruptcy.|0
+/temp/e-liang/out/jenie/aud_neutral/neutral_197-364_0270.wav|And after the bath a shave would not be bad.|1
+/temp/e-liang/out/sam/aud_anger/anger_421-448_0446.wav|He deluged me, overwhelmed me with argument.|3
+/temp/e-liang/out/sam/aud_sleep/sleepiness_29-56_0055.wav|Philip stood undecided, his ears strained to catch the slightest sound.|3
+/temp/e-liang/out/jenie/aud_anger/anger_477-504_0497.wav|King took every advantage he knew.|1
+/temp/e-liang/out/jenie/aud_disgust/disgust_533-560_0533.wav|Dunham, can your boy go along with Jesse.|1
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_57-84_0081.wav|What if she did not come to the rock.|1
+/temp/e-liang/out/josh/aud_sleep/sleepiness_169-196_0194.wav|He drank of the water cautiously.|2
+/temp/e-liang/out/sam/aud_sleep/sleepiness_477-504_0481.wav|Nimrod replied, with a slight manifestation of sensitiveness.|3
+/temp/e-liang/out/jenie/aud_neutral/neutral_29-56_0042.wav|How could he explain his possession of the sketch.|1
+/temp/e-liang/out/josh/aud_am/amused_281-308_0285.wav|But what they want with your toothbrush is more than I can imagine.|2
+/temp/e-liang/out/jenie/aud_anger/anger_309-336_0336.wav|So unexpected was my charge that I knocked him off his feet.|1
+/temp/e-liang/out/bea/sleepiness/sleepiness_449-476_0476.wav|At this moment I felt a stir at my shoulder.|0
+/temp/e-liang/out/sam/aud_am/amused_393-420_0410.wav|So we have to fit the boat throughout with oil lamps as well.|3
+/temp/e-liang/out/sam/aud_anger/anger_1-28_0004.wav|Lord, but I'm glad to see you again, Phil.|3
+/temp/e-liang/out/josh/aud_am/amused_1-28_0009.wav|He turned sharply, and faced Gregson across the table.|2
+/temp/e-liang/out/jenie/aud_neutral/neutral_141-168_0166.wav|Two days ago Jeanne learned where her father's men were hiding.|1
+/temp/e-liang/out/bea/sleepiness/sleepiness_253-280_0263.wav|Joan looked triumphantly at Sheldon, who bowed.|0
+/temp/e-liang/out/bea/sleepiness/sleepiness_197-224_0205.wav|From now on we're pals.|0
+/temp/e-liang/out/bea/sleepiness/sleepiness_337-364_0363.wav|It is not an attempt to smash the market.|0
+/temp/e-liang/out/josh/aud_am/amused_252-280_0259.wav|Think of investing in such an adventure.|2
+/temp/e-liang/out/josh/aud_neut/neutral_253-280_0254.wav|Straight out they swam, their heads growing smaller and smaller.|2
+/temp/e-liang/out/josh/aud_neut/neutral_281-308_0306.wav|He was pressing beyond the limits of his vocabulary.|2
+/temp/e-liang/out/jenie/aud_sleep/sleepiness_225-252_0250.wav|He had observed the business life of Hawaii and developed a vaulting ambition.|1
+/temp/e-liang/out/sam/aud_anger/anger_57-84_0062.wav|The men stared into each other's face.|3
+/temp/e-liang/out/sam/aud_am/amused_253-280_0264.wav|And I hope you've got plenty of chain out, Captain Young.|3

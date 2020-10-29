@@ -1,10 +1,9 @@
-matplotlib==2.1.0
-tensorflow==1.15.2
-inflect==0.2.5
-librosa==0.6.0
-scipy==1.0.0
-tensorboardX==1.1
-Unidecode==1.0.22
+matplotlib==3.3.1
+tensorflow==2.3.1
+inflect==4.1.0
+librosa==0.8.0
+scipy==1.5.2
+Unidecode==1.1.1
 pillow
 nltk==3.4.5
 jamo==0.4.1
