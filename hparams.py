@@ -20,7 +20,7 @@ def create_hparams(hparams_string=None, verbose=False):
         dist_url="tcp://localhost:54321",
         cudnn_enabled=True,
         cudnn_benchmark=False,
-        ignore_layers=['speaker_embedding.weight'],
+        ignore_layers=['emotion_embedding.weight'],
 
         ################################
         # Data Parameters             #
@@ -42,8 +42,6 @@ def create_hparams(hparams_string=None, verbose=False):
         n_mel_channels=80,
         mel_fmin=0.0,
         mel_fmax=8000.0,
-        f0_min=80,
-        f0_max=880,
         harm_thresh=0.25,
 
         ################################
@@ -85,9 +83,9 @@ def create_hparams(hparams_string=None, verbose=False):
         postnet_kernel_size=5,
         postnet_n_convolutions=5,
 
-        # Speaker embedding
-        n_speakers=4,
-        speaker_embedding_dim=128,
+        # Emotion embedding
+        n_emotions=4,
+        emotion_embedding_dim=4,
 
         # Reference encoder
         with_gst=True,

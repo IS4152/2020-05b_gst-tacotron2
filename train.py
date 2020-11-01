@@ -50,7 +50,7 @@ def prepare_dataloaders(hparams):
     # Get data, data loaders and collate function ready
     trainset = TextMelLoader(hparams.training_files, hparams)
     valset = TextMelLoader(hparams.validation_files, hparams,
-                           speaker_ids=trainset.speaker_ids)
+                           emotion_ids=trainset.emotion_ids)
     collate_fn = TextMelCollate(hparams.n_frames_per_step)
 
     if hparams.distributed_run:
@@ -123,17 +123,15 @@ def log_audio(model: Tacotron2, iteration: int, logger: Tacotron2Logger, waveglo
         mel_outputs, mel_outputs_postnet, gate_outputs, rhythm = model.forward(x)
         rhythm = rhythm.permute(1, 0, 2)
 
-    for speaker in range(4):
-        speaker_id = torch.LongTensor([speaker]).cuda()
+    for emotion in range(4):
+        emotion_id = torch.LongTensor([emotion]).cuda()
 
         with torch.no_grad():
             mel_outputs, mel_outputs_postnet, gate_outputs, _ = model.inference_noattention(
-                (text_encoded, mel, speaker_id, pitch_contour, rhythm))
-
-        with torch.no_grad():
+                (text_encoded, mel, emotion_id, rhythm))
             audio = waveglow.infer(mel_outputs_postnet, sigma=0.8)
 
-        logger.add_audio(f"Speaker {str(speaker)}", audio[0].data.cpu(), global_step=iteration, sample_rate=hparams.sampling_rate)
+        logger.add_audio(f"Emotion {str(emotion)}", audio[0].data.cpu(), global_step=iteration, sample_rate=hparams.sampling_rate)
 
 def validate(model, criterion, valset, iteration, batch_size, n_gpus,
              collate_fn, logger, distributed_run, rank):
@@ -205,10 +203,12 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
     # waveglow.cuda().eval().half()
     for k in waveglow.convinv:
         k.float()
+    
+    # ---------------------- MELLOTRON CODE BLOCK --------------------------
     arpabet_dict = cmudict.CMUDict('data/cmu_dictionary')
     audio_paths = 'data/examples_filelist.txt'
     dataloader = TextMelLoader(audio_paths, hparams)
-    datacollate = TextMelCollate(1)
+    datacollate = TextMelCollate(hparams.n_frames_per_step)
     file_idx = 0
     audio_path, text, sid = dataloader.audiopaths_and_text[file_idx]
 
@@ -233,6 +233,8 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
     mel = load_mel(audio_path)
     print(audio_path, text)
     inference_batch = datacollate([dataloader[file_idx]])
+
+    # ---------------------- MELLOTRON CODE BLOCK (END) --------------------------
 
     logger = prepare_directories_and_logger(
         output_directory, log_directory, rank)
