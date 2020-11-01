@@ -114,7 +114,7 @@ def save_checkpoint(model, optimizer, learning_rate, iteration, filepath):
                 'optimizer': optimizer.state_dict(),
                 'learning_rate': learning_rate}, filepath)
 
-def log_audio(model: Tacotron2, iteration: int, logger: Tacotron2Logger, waveglow, inference_batch, text_encoded, mel, pitch_contour):
+def log_audio(model: Tacotron2, iteration: int, logger: Tacotron2Logger, waveglow, inference_batch, text_encoded, mel):
     # load source data to obtain rhythm using tacotron 2 as a forced aligner
     x, y = model.parse_batch(inference_batch)
 
@@ -176,8 +176,8 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
     """
     if hparams.distributed_run:
         init_distributed(hparams, n_gpus, rank, group_name)
-    else:
-        torch.cuda.set_device('cuda:1')
+    # else:
+    #     torch.cuda.set_device('cuda:1')
 
     torch.manual_seed(hparams.seed)
     torch.cuda.manual_seed(hparams.seed)
@@ -229,7 +229,6 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
 
     # get audio path, encoded text, pitch contour and mel for gst
     text_encoded = torch.LongTensor(text_to_sequence(text, hparams.text_cleaners, arpabet_dict))[None, :].cuda()    
-    pitch_contour = dataloader[file_idx][3][None].cuda()
     mel = load_mel(audio_path)
     print(audio_path, text)
     inference_batch = datacollate([dataloader[file_idx]])
@@ -315,7 +314,7 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
                                     checkpoint_path)
 
                     # if not is_overflow and (iteration % 2 == 0):
-                    log_audio(model, iteration, logger, waveglow, inference_batch, text_encoded, mel, pitch_contour)
+                    log_audio(model, iteration, logger, waveglow, inference_batch, text_encoded, mel)
 
             iteration += 1
 
