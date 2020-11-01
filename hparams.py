@@ -108,7 +108,7 @@ def create_hparams(hparams_string=None, verbose=False):
         use_saved_learning_rate=False,
         learning_rate=1e-3,
         learning_rate_min=1e-5,
-        learning_rate_anneal=50000,
+        learning_rate_anneal=20000,
         weight_decay=1e-6,
         grad_clip_thresh=1.0,
         batch_size=32,
