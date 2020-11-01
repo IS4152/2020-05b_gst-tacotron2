@@ -25,8 +25,8 @@ def create_hparams(hparams_string=None, verbose=False):
         ################################
         # Data Parameters             #
         ################################
-        training_files='filelists/emovdbwithonespeakeroneemo_audio_text_train_filelist.txt',
-        validation_files='filelists/emovdbwithonespeakeroneemo_audio_text_val_filelist.txt',
+        training_files='filelists/emovdbnevwithonespeakeroneemo_audio_text_train_filelist.txt',
+        validation_files='filelists/emovdbnevwithonespeakeroneemo_audio_text_val_filelist.txt',
         text_cleaners=['english_cleaners'],
         p_arpabet=1.0,
         cmudict_path="data/cmu_dictionary",

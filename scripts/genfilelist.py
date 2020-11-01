@@ -23,7 +23,8 @@ import numpy as np
 # FILENAMEPREFIX = 'i_am_a_screw_up_and_forgot_to_set_this' # DO NOT COMMIT THIS UNCOMMENTED
 # FILENAMEPREFIX = 'emovdb'
 # FILENAMEPREFIX = 'emovdbwithspeaker'
-FILENAMEPREFIX = 'emovdbwithonespeakeroneemo'
+# FILENAMEPREFIX = 'emovdbwithonespeakeroneemo'
+FILENAMEPREFIX = 'emovdbnevwithonespeakeroneemo'
 # FILENAMEPREFIX = 'emovdbbutoneonly'
 # FILENAMEPREFIX = 'emovdbwithljsbutless'
 # FILENAMEPREFIX = 'emovdbwithoutamused'
@@ -71,7 +72,7 @@ def get_emovdb_lines():
     # Follows emo-tts:
     # Jenie anger, Jenie disgust (emo-tts uses Bea disgust, but Bea has no disgust emotion), Bea sleepiness, and Bea amused
     for speaker_idx, speaker in enumerate(['/jenie/aud_anger/', '/jenie/aud_disgust/', '/bea/amused/', '/bea/sleepiness/']):
-        files = sorted(glob.glob(f"/temp/e-liang/out{speaker}*"))
+        files = sorted(glob.glob(f"/temp/e-liang/out-no-nve{speaker}*"))
         all_emovdb_lines.extend([f"{os.path.abspath(file)}|{dataLookup[p.match(file).group(1)]}|{speaker_idx}\n" for file in files if p.match(file) is not None])
 
     return all_emovdb_lines
