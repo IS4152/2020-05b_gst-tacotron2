@@ -21,17 +21,19 @@ import numpy as np
 # Params
 
 # FILENAMEPREFIX = 'i_am_a_screw_up_and_forgot_to_set_this' # DO NOT COMMIT THIS UNCOMMENTED
+FILENAMEPREFIX = 'ljs'
 # FILENAMEPREFIX = 'emovdb'
 # FILENAMEPREFIX = 'emovdbwithspeaker'
 # FILENAMEPREFIX = 'emovdbwithonespeakeroneemo'
-FILENAMEPREFIX = 'emovdbnevwithonespeakeroneemo'
+# FILENAMEPREFIX = 'emovdbnevwithonespeakeroneemo'
 # FILENAMEPREFIX = 'emovdbbutoneonly'
 # FILENAMEPREFIX = 'emovdbwithljsbutless'
 # FILENAMEPREFIX = 'emovdbwithoutamused'
 # FILENAMEPREFIX = 'meld'
 # FILENAMEPREFIX = 'iemocap'
 
-INCLUDE_EMOVDB = True
+INCLUDE_EMOVDB = False
+INCLUDE_LJS = True
 INCLUDE_MELD = False
 INCLUDE_IEMOCAP = False
 
@@ -77,6 +79,18 @@ def get_emovdb_lines():
 
     return all_emovdb_lines
 
+def get_ljs_lines():
+    metadata_lines = None
+    LJS_FOLDER = '/temp/e-liang/LJSpeech-1.1'
+    with open(os.path.join(LJS_FOLDER, 'metadata.csv'), 'r') as f:
+        metadata_lines = f.readlines()
+
+    def metadata_line_to_dataset_line(line):
+        [lj_id, _, normalized_transcript] = line.split('|') # From LJS README, each line contains ID, Transcription, Normalized Transcript
+        filepath = os.path.join(LJS_FOLDER, "wavs", f"{lj_id}.wav")
+        return f"{filepath}|{normalized_transcript.strip()}|0\n"
+    return list(map(metadata_line_to_dataset_line, metadata_lines))
+
 def get_meld_lines():
     # Only use train split
     dataLookup = {}
@@ -110,6 +124,8 @@ def get_iemocap_lines():
 dataset_lines = []
 if INCLUDE_EMOVDB:
     dataset_lines = get_emovdb_lines() + dataset_lines
+if INCLUDE_LJS:
+    dataset_lines = get_ljs_lines() + dataset_lines
 if INCLUDE_MELD:
     dataset_lines = get_meld_lines() + dataset_lines
 if INCLUDE_IEMOCAP:

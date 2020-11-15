@@ -25,8 +25,12 @@ def create_hparams(hparams_string=None, verbose=False):
         ################################
         # Data Parameters             #
         ################################
-        training_files='filelists/emovdbnevwithonespeakeroneemo_audio_text_train_filelist.txt',
-        validation_files='filelists/emovdbnevwithonespeakeroneemo_audio_text_val_filelist.txt',
+        training_files='filelists/emovdbwithonespeakeroneemo_audio_text_train_filelist.txt',
+        validation_files='filelists/emovdbwithonespeakeroneemo_audio_text_val_filelist.txt',
+        # training_files='filelists/emovdbnevwithonespeakeroneemo_audio_text_train_filelist.txt',
+        # validation_files='filelists/emovdbnevwithonespeakeroneemo_audio_text_val_filelist.txt',
+        # training_files='filelists/ljs_audio_text_train_filelist.txt',
+        # validation_files='filelists/ljs_audio_text_val_filelist.txt',
         text_cleaners=['english_cleaners'],
         p_arpabet=1.0,
         cmudict_path="data/cmu_dictionary",
@@ -48,17 +52,17 @@ def create_hparams(hparams_string=None, verbose=False):
         # Model Parameters             #
         ################################
         n_symbols=len(symbols),
-        symbols_embedding_dim=512,
+        symbols_embedding_dim=256,
 
         # Encoder parameters
         encoder_kernel_size=5,
         encoder_n_convolutions=3,
-        encoder_embedding_dim=512,
+        encoder_embedding_dim=256,
 
         # Decoder parameters
         n_frames_per_step=1,  # currently only 1 is supported
-        decoder_rnn_dim=1024,
-        prenet_dim=256,
+        decoder_rnn_dim=512,
+        prenet_dim=128,
         prenet_f0_n_layers=1,
         prenet_f0_dim=1,
         prenet_f0_kernel_size=1,
@@ -71,15 +75,15 @@ def create_hparams(hparams_string=None, verbose=False):
         p_teacher_forcing=1.0,
 
         # Attention parameters
-        attention_rnn_dim=1024,
-        attention_dim=128,
+        attention_rnn_dim=512,
+        attention_dim=64,
 
         # Location Layer parameters
         attention_location_n_filters=32,
         attention_location_kernel_size=31,
 
         # Mel-post processing network parameters
-        postnet_embedding_dim=512,
+        postnet_embedding_dim=256,
         postnet_kernel_size=5,
         postnet_n_convolutions=5,
 
@@ -104,9 +108,9 @@ def create_hparams(hparams_string=None, verbose=False):
         # Optimization Hyperparameters #
         ################################
         use_saved_learning_rate=False,
-        learning_rate=1e-3,
+        learning_rate=5e-4,
         learning_rate_min=1e-5,
-        learning_rate_anneal=20000,
+        learning_rate_anneal=50000,
         weight_decay=1e-6,
         grad_clip_thresh=1.0,
         batch_size=32,
